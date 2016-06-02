@@ -1,19 +1,23 @@
 class ItemsController < ApplicationController
-  before_action :city, except: [:index, :new, :create]
+  before_action :list
+  before_action :item, except: [:index, :new, :create]
+
 
   def index
-    @items = Item.all
+    @items = @list.items
   end
 
   def show
   end
 
   def new
+    # item to build off of @list
     @item = Item.new
   end
 
   def create
-    @item = Item.new(item_params)
+    # item build off of list
+    @item = @list.items.new(item_params)
     if @item.save
       redirect_to item_path(@item)
     else
@@ -25,7 +29,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(city_params)
+    if @item.update(item_params)
       redirect_to item_path(@item)
     else
       render :edit
@@ -41,6 +45,10 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :complete, :like)
+  end
+
+  def list
+    @list = List.find(params[:list_id])
   end
 
   def item
