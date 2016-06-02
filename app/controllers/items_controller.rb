@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
     # item build off of list
     @item = @list.items.new(item_params)
     if @item.save
-      redirect_to item_path(@item)
+      redirect_to list_item_path(@list, @item)
     else
       render :new
     end

@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
-  before_action :
+  before_action :list, except: [:index, :new, :create]
+
   def index
   	@lists = List.all
   end
