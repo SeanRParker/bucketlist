@@ -6,6 +6,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @items = @list.items
   end
 
   def edit
@@ -33,7 +34,9 @@ class ListsController < ApplicationController
   end
 
   def destroy
-
+    list_name = @list.name
+    @list.destroy
+    redirect_to lists_path
   end
 
   private

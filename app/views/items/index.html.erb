@@ -1,3 +1,16 @@
 <h1>Items for <%= @list.name %></h1>
 
-<% link_to, 'Add new item', new_list_item_path %>
+<% if @items.any? %>
+	<ul>
+		<% @items.each do |item| %>
+			<li>
+				<%= link_to item.name, list_items_path %>
+			</li>
+		<% end %>
+	</ul>
+<% else %>
+	<h3> No items! Please add one!</h3>
+<% end %>
+
+<%= link_to 'Add new item', new_list_item_path %>
+<%= link_to 'Back to Bucketlist', lists_path %>
