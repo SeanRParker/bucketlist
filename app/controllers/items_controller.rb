@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
 
   def create
     # item build off of list
-    @item = @list.items.new(item_params)
+    @item = @list_create.items.new(item_params)
     if @item.save
       redirect_to item_path(@item)
     else

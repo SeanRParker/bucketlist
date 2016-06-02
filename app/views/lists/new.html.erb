@@ -1,2 +1,15 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<h1>Add a New Bucketlist</h1>
+
+
+<%= form_for @list do |f| %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name, autofocus: true %>
+
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+
+	<%= f.submit "Create Bucketlist" %>
+
+<% end %>
+

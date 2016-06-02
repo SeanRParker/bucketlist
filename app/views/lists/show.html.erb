@@ -1,2 +1,7 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<h1>Bucketlist <%= @list.name %></h1>
+<br />
+
+<%= @list.description %>
+
+<h2>Add items to your bucketlist!</h2>
+<%= link_to 'Add Items', new_list_item_path(@list) %>
