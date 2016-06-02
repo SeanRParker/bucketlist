@@ -1,10 +1,11 @@
 <h1>All Bucketlists</h1>
 
+
 <% if @lists.any? %>
 	<ul>
 		<% @lists.each do |list| %>
 			<li>
-  			<%= link_to @list.name, list_item_path(@list) %>
+  			<%= link_to list.name, list_path(list) %>
   		</li>
   	<% end %>
   </ul>
