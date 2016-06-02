@@ -1,0 +1,14 @@
+<%= form_for [@list, @item] do |f| %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name, autofocus: true %>
+
+	<%= f.label :complete %>
+	<%= f.check_box :complete %>
+
+	<%= f.label :like %>
+	<%= f.check_box :like %>
+
+	<%= f.submit %>
+
+<% end %>
