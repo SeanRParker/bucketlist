@@ -1,4 +1,15 @@
 <h1>All Bucketlists</h1>
 
+<% if @lists.any? %>
+	<ul>
+		<% @lists.each do |list| %>
+			<li>
+  			<%= link_to @list.name, list_item_path(@list) %>
+  		</li>
+  	<% end %>
+  </ul>
+<% else %>
+  <h3>No bucketlists, please add one!</h3>
+<% end %>
 
 <%= link_to 'Create a New Bucketlist', new_list_path %>
