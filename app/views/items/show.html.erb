@@ -1,4 +1,8 @@
-<h1>Item <%=@item.name %></h1>
+<h1>Item: <%=@item.name %></h1>
 
-<h3><%= @item.complete %></h3>
-<h3><%= @item.like %></h3>
+<h3>Is your item complete? <%= @item.complete %></h3>
+<h3>Is your item liked? <%= @item.like %></h3>
+
+<%= link_to 'All Items in Bucketlist', list_items_path(@list) %>
+
+<%= link_to 'Edit Item', edit_list_item_path(@item) %>
