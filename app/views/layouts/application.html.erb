@@ -7,17 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render(partial: 'layouts/nav') %>
+  <%= render(partial: 'layouts/nav') %>
+  <div class="center-align container">
 
-<% if flash.any? %>
-	<% flash.each do |key, value| %>
-		<div class="flash <%= key %>">
-			<%= value %>
-		</div>
-	<% end %>
-<% end %>
 
-<%= yield %>
+    <% if flash.any? %>
+    <% flash.each do |key, value| %>
+    <div class="flash <%= key %>">
+      <%= value %>
+    </div>
+    <% end %>
+    <% end %>
 
+    <%= yield %>
+  </div>
 </body>
 </html>
