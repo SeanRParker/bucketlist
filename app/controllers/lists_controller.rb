@@ -48,4 +48,8 @@ class ListsController < ApplicationController
   def list
   	@list = List.find(params[:id])
   end
+
+  def item
+    @item = Item.find(params[:id])
+  end
 end

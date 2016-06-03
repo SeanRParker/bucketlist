@@ -8,6 +8,7 @@
 		<% @items.each do |item| %>
 			<li>
   			<%= link_to item.name, list_item_path(@list, item) %>
+  			<%= image_tag item.image.url(:medium) %>
   		</li>
   	<% end %>
   </ul>

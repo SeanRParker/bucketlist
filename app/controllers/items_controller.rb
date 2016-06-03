@@ -16,7 +16,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # item build off of list
     @item = @list.items.create(item_params)
     if @item.save
       redirect_to list_item_path(@list, @item)
@@ -29,22 +28,23 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(item_params)
-      redirect_to item_path(@item)
+    @item = @list.items.update(item_params)
+    if @item
+      redirect_to list_item_path(@list, @item)
     else
       render :edit
     end
   end
 
   def destroy
-    item_name = @item.name
+    # item_name = @item.name
     @item.destroy
-    redirect_to items_path
+    redirect_to list_path(@list)
   end
 
   private
   def item_params
-    params.require(:item).permit(:name, :complete, :like)
+    params.require(:item).permit(:name, :complete, :like, :image)
   end
 
   def list
