@@ -1,1 +1,11 @@
+<nav>
+    <div class="nav-wrapper green lighten-2">
 
+      <ul id="nav-mobile" class="center hide-on-med-and-down">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'User Profile', edit_user_registration_path %></li>
+        <li><%= link_to 'Lists', lists_path %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, data: {confirm: 'Really logout of Bucketlist?'} %></li>
+      </ul>
+    </div>
+  </nav>
