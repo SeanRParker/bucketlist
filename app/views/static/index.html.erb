@@ -1,4 +1,20 @@
 <h1>Welcome: <%= current_user.username %></h1>
+<% if @lists.any? %>
+	<ul>
+		<% @lists.each do |list| %>
+			<li>
+				<h4>
+  			<%= link_to list.name, list_path(list) %>
+				</h4>
+  		</li>
+  	<% end %>
+  </ul>
+<% else %>
+  <h3>No bucketlists, please add one!</h3>
+<% end %>
+
+<%= link_to 'Create a New Bucketlist', new_list_path, class: "waves-effect waves-light btn green lighten-2" %>
+
 
 <%= link_to 'All Bucketlists', lists_path, class: "waves-effect waves-light btn green lighten-2" %>
 
