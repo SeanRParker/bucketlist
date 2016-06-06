@@ -14,3 +14,11 @@
  *= require_self
  */
  @import 'materialize';
+
+ body input[type=text]:focus:not([readonly]){
+   border-bottom: 1px solid rgb(129, 199, 132);
+    box-shadow: 0 1px 0 0 rgb(129, 199, 132);
+ }
+ body .btn{
+   background:rgb(129, 199, 132);
+ }
