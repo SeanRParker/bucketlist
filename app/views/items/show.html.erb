@@ -1,9 +1,9 @@
 <h1>Item: <%=@item.name %></h1>
 
-<% if @item.image != 'nil' %>
+<% unless @item.image.blank? %>
 		<%= image_tag @item.image.url(:medium) %>
 <% else %>
-	<h3>No photo.</h3>
+	<h5>No photo.</h5>
 <% end %>
 
 <h3>Is your item complete? <%= @item.complete %></h3>

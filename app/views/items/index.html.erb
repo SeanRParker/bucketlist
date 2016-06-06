@@ -4,12 +4,12 @@
 	<ul>
 		<% @items.each do |item| %>
 			<li>
-				<h3>Item:</h3>
+				<h4>Item:</h4>
 				<%= link_to item.name, edit_list_item_path(@list, item) %>
-				<% if item.image != 'nil' %>
-						<%= image_tag item.image.url(:medium) %>
+				<% unless item.image.blank? %>
+					<%= image_tag item.image.url(:medium) %>
 				<% else %>
-					<h3>No photo.</h3>
+					<h5>No photo.</h5>
 				<% end %>
 			</li>
 		<% end %>
