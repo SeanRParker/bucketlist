@@ -28,8 +28,8 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = @list.items.update(item_params)
-    if @item
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
       redirect_to list_item_path(@list, @item)
     else
       render :edit
