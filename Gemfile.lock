@@ -181,7 +181,11 @@ DEPENDENCIES
   materialize-sass
   paperclip (~> 5.0.0beta1)
   pg (~> 0.15)
+<<<<<<< f2e2c19e47cbdc394e86ab531d0d65d71137778f
   pry (~> 0.10.3)
+=======
+  pry
+>>>>>>> working CRUD
   rails (= 4.2.6)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
