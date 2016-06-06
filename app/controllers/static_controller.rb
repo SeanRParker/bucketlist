@@ -1,4 +1,5 @@
 class StaticController < ApplicationController
-	def index
-	end
+  def index
+    @lists = current_user.lists
+  end
 end
