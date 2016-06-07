@@ -1,7 +1,7 @@
 <h1>Item: <%=@item.name %></h1>
 
 <% unless @item.image.blank? %>
-		<%= image_tag @item.image.url(:medium) %>
+		<%= cl_image_tag @item.image.url(:medium) %>
 <% else %>
 	<h5>No photo.</h5>
 <% end %>

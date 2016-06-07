@@ -7,7 +7,7 @@
 				<h4>Item:</h4>
 				<%= link_to item.name, edit_list_item_path(@list, item) %>
 				<% unless item.image.blank? %>
-					<%= image_tag item.image.url(:medium) %>
+					<%= cl_image_tag item.image.url(:medium) %>
 				<% else %>
 					<h5>No photo.</h5>
 				<% end %>

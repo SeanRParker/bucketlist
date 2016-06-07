@@ -39,4 +39,10 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # cloud_name: marabd
+  # api_key: '553548858666555'
+  # api_secret: 2d_GyquIjAGeIKntFD4gj0HqQy4
+  # enhance_image_tag: true
+  # static_image_support: false
 end
