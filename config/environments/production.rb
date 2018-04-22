@@ -76,4 +76,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # cloud_name: marabd
+  # api_key: '553548858666555'
+  # api_secret: 2d_GyquIjAGeIKntFD4gj0HqQy4
+  # enhance_image_tag: true
+  # static_image_support: true
+
 end
